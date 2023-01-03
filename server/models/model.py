@@ -8,12 +8,12 @@ from datetime import datetime
 def date_time():
     return datetime.utcnow()
 
+
 class User(base):
     __tablename__ = "user"
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4())
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     user_name = Column(String)
     email = Column(String)
     password = Column(String)
-    created_at = Column(DateTime, default=date_time())
-    updated_at = Column(DateTime, default=date_time())
-
+    created_at = Column(DateTime, default=date_time)
+    updated_at = Column(DateTime, default=date_time)

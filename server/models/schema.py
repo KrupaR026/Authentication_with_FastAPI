@@ -1,23 +1,35 @@
 from pydantic import BaseModel
 
-class UserAuth(BaseModel):
+"""schema for your signup"""
+
+
+class Usersauth(BaseModel):
     user_name: str
     email: str
     password: str
 
-    class Config:
+    class config:
         orm_mode = True
 
-class UserOut(BaseModel):
+
+"""schema for user signup response"""
+
+
+class Displayuser(BaseModel):
+    id: int
     user_name: str
     email: str
 
     class Config:
         orm_mode = True
 
-class TokenSchema(BaseModel):
-    access_token: str
-    token_type: str
+
+"""schema for user logging"""
+
+
+class Userinfo(BaseModel):
+    user_name: str
+    password: str
 
     class Config:
         orm_mode = True

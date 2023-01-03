@@ -4,6 +4,7 @@ from server.routes.signup import signupRouter
 
 app = FastAPI()
 
+
 @app.get("/")
 def home():
     """simple home page routes
@@ -14,5 +15,5 @@ def home():
     return {"data": "you are at the home page"}
 
 
-app.include_router(signupRouter, tags=['signup'])
-app.include_router(loginRouter, tags=['login'])
+app.include_router(signupRouter, tags=["signup"])
+app.include_router(loginRouter, tags=["login"])
